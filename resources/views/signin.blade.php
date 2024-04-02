@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('assets/img/usohorizontal.png') }}" rel="icon">
+    <link href="{{ secure_asset('assets/img/usohorizontal.png') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-center mb-3">
-                            <img src="{{ asset('assets/img/usohorizontal.png') }}" width="200">
+                            <img src="{{ secure_asset('assets/img/usohorizontal.png') }}" width="200">
                         </div>
                         <form method="post" action="{{ route('login1') }}">
                             @csrf
