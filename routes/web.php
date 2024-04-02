@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('signin');
 })->name('login');
+Route::get('/', function () {
+    return view('signin');
+});
 Route::get('/dashboard', ['App\Http\Controllers\DashboardController', 'index'])->name('dashboard');
 Route::resource('projects', 'App\Http\Controllers\ProjectController');
 Route::get('workstations/{id}/', ['App\Http\Controllers\WorkstationController', 'indexbyproject']);
