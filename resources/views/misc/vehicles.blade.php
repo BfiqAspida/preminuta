@@ -29,31 +29,28 @@
 <div>&nbsp;<br></div>
 <div class="col-12">
     <div class="bg-light rounded h-100 p-4">
-        <h6 class="mb-4">Recorridos</h6>
+        <h6 class="mb-4">Vehículos</h6>
         <div class="table-responsive">
             <table class="table" id="routes">
                 <thead>
                     <tr>
-                        <th scope="col">Inicio</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Documento</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Fin</th>
-                        <th scope="col">Marcación</th>
-                        <th scope="col">Tiempo(Horas)</th>
-                        <th scope="col">Ver</th>
-                        
+                        <th scope="col">Entrada</th>
+                        <th scope="col">Salida</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($routes as $route)
+                    @foreach($vehicles as $vehicle)
                     <tr>
-                        <th scope="row">{{$route["start_time"]}}</th>
-                        <td>{{$route->routes["name"]}}</td>
-                        <td>{{$route["end_time"]}}</td>
-                        <td>{{$route["percentage"]}}%</td>
-                        <td>{{$route["time"]}}</td>
-                        <td>
-                            <a href="../../../../routes1/{{$workstation}}/record/{{$route['route_record_id']}}"><i class="bi-eye-fill" style="font-size:1.5em"></i></a>
-                        </td>
+                        <th scope="row">{{$vehicle["plate"]}}</th>
+                        <td>{{$vehicle["vehicles_type_id_id"]}}</td>
+                        <td>{{$vehicle["document"]}}</td>
+                        <td>{{$vehicle["owner_name"]}}</td>
+                        <td>{{$vehicle["created_at"]}}</td>
+                        <td>{{$vehicle["date_out"]}}</td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -74,7 +71,7 @@
     function sendForm(){
         let inicial = $("#inicial").val();
         let final = $("#final").val();        
-        let relativeURL = 'https://reportes.minut.app/workstations/';
+        let relativeURL = 'http://127.0.0.1:8000/workstations/';
         relativeURL = relativeURL+'{{$id}}/routes/{{$workstation}}/'+inicial+'/'+final+'/';
         window.location.href=relativeURL;
     }

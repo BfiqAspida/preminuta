@@ -26,6 +26,8 @@ Route::get('workstations/{id}/', ['App\Http\Controllers\WorkstationController', 
 Route::get('workstations/{id}/routes/{workstation}/{inicial?}/{final?}', ['App\Http\Controllers\RouteController', 'routebyworkstation']);
 Route::get('workstations/{id}/routes1/{workstation}/record/{route}', ['App\Http\Controllers\RouteController', 'recordsbyroute']);
 Route::post('/login1', ['App\Http\Controllers\LoginController', 'login'])->name('login1');
+Route::resource('vehicles', 'App\Http\Controllers\VehicleController');
+Route::get('vehicle/{workstation}/{inicial?}/{final?}', ['App\Http\Controllers\VehicleController', 'index']);
 
 //Auth::routes();
 
