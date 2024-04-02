@@ -66,7 +66,7 @@ class RouteController extends Controller
             return redirect('/login');
     }
     
-    public function recordsbyroute($id, $workstation, $route){
+    public function recordsbyroute(Request $request, $id, $workstation, $route){
         if($request->session()->has('user')){
             $routes = RouteMarkPointRecord::with('points')->where('route_record_id_id',$route)->get();
             $name = $request->session()->get('user')["name"];
