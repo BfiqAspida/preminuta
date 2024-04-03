@@ -34,23 +34,25 @@
             <table class="table" id="routes">
                 <thead>
                     <tr>
+                        <th scope="col">Entrada</th>
+                        <th scope="col">Salida</th>
                         <th scope="col">Placa</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Documento</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Entrada</th>
-                        <th scope="col">Salida</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($vehicles as $vehicle)
                     <tr>
-                        <th scope="row">{{$vehicle["plate"]}}</th>
+                        <th scope="row">{{$vehicle["created_at"]}}</th>
+                        <td>{{date_format(new DateTime($vehicle["date_out"]), 'Y-m-d H:i:s')}}</td>
+                        <td>{{$vehicle["plate"]}}</td>
                         <td>{{$vehicle["vehicles_type_id_id"]}}</td>
                         <td>{{$vehicle["document"]}}</td>
                         <td>{{$vehicle["owner_name"]}}</td>
-                        <td>{{$vehicle["created_at"]}}</td>
-                        <td>{{$vehicle["date_out"]}}</td>
+                        
                     </tr>
                     @endforeach
                 </tbody>
@@ -71,9 +73,10 @@
     function sendForm(){
         let inicial = $("#inicial").val();
         let final = $("#final").val();        
-        let relativeURL = 'http://127.0.0.1:8000/workstations/';
-        relativeURL = relativeURL+'{{$id}}/routes/{{$workstation}}/'+inicial+'/'+final+'/';
-        window.location.href=relativeURL;
+        let relativeURL = 'https://reportes.minut.app/workstations/';
+        relativeURL = relativeURL+'{{$id}}/vehicle/{{$workstation}}/'+inicial+'/'+final+'/';
+        alert(relativeURL);
+        //window.location.href=relativeURL;
     }
 </script>
 @endsection

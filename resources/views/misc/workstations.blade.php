@@ -31,14 +31,14 @@
                         
                         <td>
                         @foreach($modules as $module)
-                            
-                        @endforeach
                             @if($module['module_id_id']==2)
-                            <a href="vehicles/{{$workstation['workstation_id']}}/{{$inicial}}/{{$final}}/"><i class="bi-car-front-fill" style="font-size:1.5em"></i></a>&nbsp;&nbsp;
+                            <a href="vehicle/{{$workstation['workstation_id']}}/{{$inicial}}/{{$final}}/"><i class="bi-car-front-fill" style="font-size:1.5em"></i></a>&nbsp;&nbsp;
                             @endif
                             @if($module['module_id_id']==4)
                             <a href="routes/{{$workstation['workstation_id']}}/{{$inicial}}/{{$final}}/"><i class="bi-binoculars-fill" style="font-size:1.5em"></i></a>
                             @endif
+                        @endforeach
+                            
                         </td>
                         
                     </tr>

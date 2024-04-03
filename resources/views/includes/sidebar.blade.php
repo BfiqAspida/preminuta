@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{route('dashboard')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{route('projects.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Proyectos</a>
                 </div>
             </nav>

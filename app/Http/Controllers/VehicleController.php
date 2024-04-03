@@ -15,14 +15,14 @@ use App\Traits\CacheForget;
 
 class VehicleController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $id, $workstation, $inicial, $final)
     {   
         
         if($request->session()->has('user')){
             $inicial = '2024-03-01';
             $final = '2024-04-01';
-            $id=1;
-            $workstation=1;
+            //$id=1;
+            //$workstation=1;
             $name = $request->session()->get('user')["name"];
             $vehicles = Vehicle::where('Vehicles_vehicles_book.WorkStation_id_id', 'd842ea84-a431-11ee-a506-0242ac120002')->get();
             return view('misc.vehicles',compact('vehicles', 'id', 'workstation', 'inicial', 'final','name'));
