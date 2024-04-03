@@ -75,8 +75,8 @@
         let final = $("#final").val();        
         let relativeURL = 'https://reportes.minut.app/workstations/';
         relativeURL = relativeURL+'{{$id}}/vehicle/{{$workstation}}/'+inicial+'/'+final+'/';
-        alert(relativeURL);
-        //window.location.href=relativeURL;
+        
+        window.location.href=relativeURL;
     }
 </script>
 @endsection
