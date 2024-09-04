@@ -74,7 +74,7 @@
     function sendForm(){
         let inicial = $("#inicial").val();
         let final = $("#final").val();        
-        let relativeURL = 'https://reportes.minut.app/workstations/';
+        let relativeURL = 'https://preminuta.azurewebsites.net/workstations/';
         relativeURL = relativeURL+'{{$id}}/routes/{{$workstation}}/'+inicial+'/'+final+'/';
         window.location.href=relativeURL;
     }
