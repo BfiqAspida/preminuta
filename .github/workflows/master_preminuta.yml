@@ -35,7 +35,7 @@ jobs:
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: php-app
           path: release.zip
@@ -51,7 +51,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: php-app
 
@@ -59,14 +59,14 @@ jobs:
         run: unzip release.zip
       
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_946F3E0BAD454B9E8932A4CD3DE0E7CB }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_22C9A7AD868F45F49F052FFF4B64433D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7C48D021CEAA444C8A6605862CAEA5E5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D1BB433166154A2489A4AFD410E3D1B9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CCE30B75B4034CF4ACB93CC53B900A1B }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EDC44D9E147F4B4F8599AAA9CA33F6E9 }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'Preminuta'
